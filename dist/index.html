@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap-datepicker3.standalone.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signin.css">
+    <title>To Do</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-auth.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyAPBUQAuNIdw6iuAhUoPeJBp4Q4MC6yFM0",
+            authDomain: "to-do-list-99fec.firebaseapp.com",
+            projectId: "to-do-list-99fec",
+            storageBucket: "to-do-list-99fec.appspot.com",
+            messagingSenderId: "742721014649",
+            appId: "1:742721014649:web:902cd4b4d2c15a6ea83da8",
+            measurementId: "G-QPTLMNSZRB"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</head>
+
+<body>
+    <div id="hiddenContainer" hidden>
+        <div id="projectContainer">
+            <div id="topbar">
+                <img src="images/menuToggle.svg" id="sidebarToggleMenu" class="unclicked" alt="">
+                <img id='topBarLogo' src="images/croppedLogo.png" alt="">
+
+                <div id="projTitle">
+                    To-Do...
+                </div>
+                <section id="whenSignedIn">
+                    <div id="userDetails"></div>
+                    <button id="signOutButton">Sign Out</button>
+                </section>
+
+            </div>
+            <div id="sidebar">
+                <div id="sidebarContentContainer">
+                    <li id="sidebarHomeTab">Home</li>
+                    <li id="sidebarCalendarTab">Today </li>
+                    <li id="sidebarWeekTab">Week</li>
+                    <li id="sidebarProjectsTab">
+                        <div id="sidebarProjectsTitle">Projects</div>
+                        <div id="sidebarUserProjects">
+                        </div>
+                    </li>
+
+                </div>
+            </div>
+            <div id="diplaySection">
+                <div id="taskDisplayContainer">
+                    <div id="topRowTitle">Home</div>
+                    <div id="dueDateTitle">Due Date
+                        <img src="images/arrow.svg" id="dateArrowToggle" alt="">
+                    </div>
+
+                    <div id="userTaskContainer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="bootstrap-datepicker.js"></script>
+    <script src="main.js"></script>
+    <script>
+        $('#dueDate').datepicker({
+            format: "m/dd/yyyy",
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            autoclose: true,
+            todayHighlight: true
+        });
+    </script>
+
+
+</body>
+
+</html>
